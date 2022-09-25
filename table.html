@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/icons/favicon.png">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+  </head>
+  <header class="header main-header">
+    <div class="wrapper">
+      <div class="main-header__content">
+        <div class="main-header__entrance">
+          <a href="#" class="main-header__logo">
+            <img src="img/logo.svg" alt="logo" class="main-header__logo-img">
+          </a>
+          <a href="#" class="main-header__download"> Download Template </a>
+          <a href="https://www.youtube.com/watch?v=AmGM4zrdg6U" target="_blank" class="main-header__tutorial"> Watch tutorial </a>
+        </div>
+        <div class="main-header__user-space">
+          <a href="#" class="main-header__notify">
+            <img src="img/notify.svg" alt="notifications" class="main-header__notify-img">
+          </a>
+          <a href="#" class="main-header__login">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <body id="table">
+    <main>
+      <div class="wrapper">
+        <section id="dragndrop">
+          <div class="dragndrop">
+            <form class="dragndrop__form">
+              <div class="preview">
+              </div>
+              <label class="dragndrop__content" for="file">
+                <img class="dragndrop__icon" src="img/files.svg" alt="" class="dragndrop__img">
+                <p class="dragndrop__header">Click to Add Files or <span class="dragndrop__browse">Browse</span>
+                </p>
+                <p class="dragndrop__desc">Supports .csv, .xls, .xlsx files</p>
+              </label>
+              <input name="file" type="file" class="dragndrop__input" accept=".csv, .xls, .xlsx" multiple>
+              <button id="btn" class="button button_upload-template">Upload files</button>
+            </form>
+            <button class="button button_hide">&darr;</button>
+          </div>
+        </section>
+        <section class="user-workplace">
+          <form class="filters">
+            <h2 class="filters__head"> Filters </h2>
+            <div class="filters__search">
+              <input type="search" id="search" placeholder="&#x1F50E;&#xFE0E; Search">
+            </div>
+            <fieldset class="filters__categories">
+              <legend class="filters__header">Categories</legend>
+              <div class="filters__content">
+              </div>
+            </fieldset>
+            <fieldset class="filters__categories">
+              <legend class="filters__header">Weight</legend>
+              <label class="checkbox">
+                <input type="radio" class="checkbox__input" name="weight" value="weight_small">
+                <span class="checkbox__radio"></span> from small to large </label>
+              <label class="checkbox">
+                <input type="radio" class="checkbox__input" name="weight" value="weight_large">
+                <span class="checkbox__radio"></span> from large to small </label>
+            </fieldset>
+            <fieldset class="filters__categories">
+              <legend class="filters__header">Quantity</legend>
+              <label class="checkbox">
+                <input type="radio" class="checkbox__input" name="quantity" value="quantity_small">
+                <span class="checkbox__radio"></span> from small to large </label>
+              <label class="checkbox">
+                <input type="radio" class="checkbox__input" name="quantity" value="quantity_large">
+                <span class="checkbox__radio"></span> from large to small </label>
+            </fieldset>
+            <button class="button button_hide-filters positioning">
+              <div class="line left"></div>
+              <div class="line right"></div>
+            </button>
+          </form>
+          <form class="table">
+            <div class="item-management">
+              <div class="item-management__add">
+                <div class="item-management__button">
+                  <button id="add-item">+</button>
+                  <span>Add Item</span>
+                </div>
+              </div>
+              <div class="item-management__manage">
+                <a class="button-manage button-manage_export">
+                  <img src="img/excel_small.svg" alt=""> Export to Excel</a>
+                <a class="button-manage_bin">
+                  <img src="img/bin_red.svg" alt=""> Delete Items</a>
+              </div>
+            </div>
+            <div class="table__head">
+              <label id="all-checked" class="checkbox">
+                <input id="main-checkbox" type="checkbox" class="checkbox__input">
+                <span class="checkbox__span"></span>
+              </label>
+              <h3>Name</h3>
+              <h3>Price</h3>
+              <h3>Barcode</h3>
+              <h3>Category name</h3>
+              <h3>Image</h3>
+              <h3 id="sortByQuantity">Quantity</h3>
+              <h3 id="sortByWeight">Weight</h3>
+              <h3>Editor</h3>
+            </div>
+            <div id="forms">
+            </div>
+            <div class="pagination">
+              <a href="#" class="pagination__btn prev">Prev</a>
+              <a href="#" class="pagination__btn next">Next</a>
+            </div>
+            <button class="button button_submit activate">
+              <span>
+                <svg>
+                  <use xlink:href="#circle">
+                </svg>
+                <svg>
+                  <use xlink:href="#arrow">
+                </svg>
+                <svg>
+                  <use xlink:href="#check">
+                </svg>
+              </span>
+              <ul>
+                <li>Submit</li>
+                <li>Submitting...</li>
+                <li>Successfully sent</li>
+                <li>Couldn't submit</li>
+              </ul>
+            </button>
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+              <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="circle">
+                <circle cx="8" cy="8" r="7.5"></circle>
+              </symbol>
+              <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" id="arrow">
+                <path d="M2.7008908,5.37931459 L2.7008908,5.37931459 C2.9224607,5.60207651 3.2826628,5.60304283 3.50542472,5.38147293 C3.52232305,5.36466502 3.53814843,5.34681177 3.55280728,5.32801875 L5.34805194,3.02646954 L5.34805194,10.3480519 C5.34805194,10.7081129 5.63993903,11 6,11 L6,11 C6.36006097,11 6.65194806,10.7081129 6.65194806,10.3480519 L6.65194806,3.02646954 L8.44719272,5.32801875 C8.6404327,5.57575732 8.99791646,5.61993715 9.24565503,5.42669716 C9.26444805,5.41203831 9.28230129,5.39621293 9.2991092,5.37931459 L9.2991092,5.37931459 C9.55605877,5.12098268 9.57132199,4.70855346 9.33416991,4.43193577 L6.75918715,1.42843795 C6.39972025,1.00915046 5.76841509,0.960656296 5.34912761,1.32012319 C5.31030645,1.35340566 5.27409532,1.38961679 5.24081285,1.42843795 L2.66583009,4.43193577 C2.42867801,4.70855346 2.44394123,5.12098268 2.7008908,5.37931459 Z">
+                </path>
+              </symbol>
+              <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" id="check">
+                <path id="test" d="M4.76499011,6.7673683 L8.2641848,3.26100386 C8.61147835,2.91299871 9.15190114,2.91299871 9.49919469,3.26100386 C9.51164115,3.27347582 9.52370806,3.28637357 9.53537662,3.29967699 C9.83511755,3.64141434 9.81891834,4.17816549 9.49919469,4.49854425 L5.18121271,8.82537365 C4.94885368,9.05820878 4.58112654,9.05820878 4.34876751,8.82537365 L2.50080531,6.97362503 C2.48835885,6.96115307 2.47629194,6.94825532 2.46462338,6.93495189 C2.16488245,6.59321455 2.18108166,6.0564634 2.50080531,5.73608464 C2.84809886,5.3880795 3.38852165,5.3880795 3.7358152,5.73608464 L4.76499011,6.7673683 Z">
+                </path>
+              </symbol>
+              <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" id="error">
+                <path xmlns="http://www.w3.org/2000/svg" d="M26,0C11.664,0,0,11.663,0,26s11.664,26,26,26s26-11.663,26-26S40.336,0,26,0z M26,50C12.767,50,2,39.233,2,26   S12.767,2,26,2s24,10.767,24,24S39.233,50,26,50z" />
+                <path id="test" d="M35.707,16.293c-0.391-0.391-1.023-0.391-1.414,0L26,24.586l-8.293-8.293c-0.391-0.391-1.023-0.391-1.414,0   s-0.391,1.023,0,1.414L24.586,26l-8.293,8.293c-0.391,0.391-0.391,1.023,0,1.414C16.488,35.902,16.744,36,17,36   s0.512-0.098,0.707-0.293L26,27.414l8.293,8.293C34.488,35.902,34.744,36,35,36s0.512-0.098,0.707-0.293   c0.391-0.391,0.391-1.023,0-1.414L27.414,26l8.293-8.293C36.098,17.316,36.098,16.684,35.707,16.293z">
+                </path>
+              </symbol>
+            </svg>
+            <a class="dribbble" href="https://dribbble.com/shots/5709751-Activate-Button" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+          </form>
+        </section>
+      </div>
+    </main>
+  </body>
+  <div class="modal" id="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <button class="close" data-close> &#9587; </button>
+        <p class="modal-header"> Oops! An error occured! </p>
+        <img class="modal-sign" src="img/error_sign.svg" alt="">
+        <p class="modal-body"> Please check you data for mistakes </p>
+      </div>
+    </div>
+  </div>
+  <div id="modal-login">
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button class="close" data-close> &#9587; </button>
+          <p class="modal-header"> Mobile Verification </p>
+          <div class="modal-body">
+            <p class="modal-text"> We sent you an SMS code on number <b>+63 7 657 878 223</b>
+            </p>
+            <form class="modal-form" id="form-sms">
+              <div>
+                <label>
+                  <input class="modal-sms" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" required />
+                </label>
+                <label>
+                  <input class="modal-sms" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" required />
+                </label>
+                <label>
+                  <input class="modal-sms" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" required />
+                </label>
+                <label>
+                  <input class="modal-sms" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" required />
+                </label>
+              </div>
+              <span class="error">
+                <img src="img/error_sign.svg" alt="error"> ergfeefefdvddvdvv </span>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="modal-resend_pass"> Resend code </a>
+            <button form="form-sms" type="submit" class="button button_verify">Verify</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-verified-suc">
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button class="close" data-close> &#9587; </button>
+          <p class="modal-header"> Successfully enabled </p>
+          <div class="modal-body">
+            <img src="img/ver_suc.svg" alt="error">
+            <p class="modal-text">Your phone number has been veriefied successfully!</p>
+          </div>
+          <button type="button" class="button button_done">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-pass-recover">
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button class="close" data-close> &#9587; </button>
+          <p class="modal-header"> Password recovery </p>
+          <div class="modal-body">
+            <form class="modal-form" id="pass-recover">
+              <label>
+                <input class="log-in__phone" id="phone-verify" type="tel" name="phone" required />
+              </label>
+              <span class="error"><img src="img/error_sign.svg" alt="error">error</span>
+            </form>
+          </div>
+          <button form="pass-recover" type="submit" class="button button_pass-recover">Reset password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-new-pass">
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button class="close" data-close> &#9587; </button>
+          <p class="modal-header"> Create new password </p>
+          <div class="modal-body">
+            <form class="modal-form">
+              <label>
+                <input class="log-in__password" type="password" placeholder="Password" name="psw" required>
+                <span id="toggle-password">&#128065;</span>
+              </label>
+              <label>
+                <input class="log-in__password" type="password" placeholder="Confirm password" name="psw" required>
+                <span id="toggle-password">&#128065;</span>
+              </label>
+              <span class="error"><img src="img/error_sign.svg" alt="error">error</span>
+            </form>
+          </div>
+          <button type="submit" class="button button_new-pass">Reset password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-pass-saved">
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button class="close" data-close> &#9587; </button>
+          <div class="modal-header">
+            <img src="img/ver_suc.svg" alt="error">
+          </div>
+          <p class="modal-body">
+          <p class="modal-text">New password saved!</p>
+          </p>
+          <button type="button" class="button button_pass-saved">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="test"></div>
+  <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.18.10/package/dist/xlsx.full.min.js"></script>
+  <script src="./js/js.js"></script>
+</html>

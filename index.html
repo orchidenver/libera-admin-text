@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/icons/favicon.png">
+    <title>Libera Trade: Log In Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+  </head>
+  <header class="header main-header">
+    <div class="wrapper">
+      <div class="main-header__content">
+        <div class="main-header__entrance">
+          <a href="#" class="main-header__logo">
+            <img src="img/logo.svg" alt="logo" class="main-header__logo-img">
+          </a>
+          <a href="#" class="main-header__download"> Download Template </a>
+          <a href="https://www.youtube.com/watch?v=AmGM4zrdg6U" target="_blank" class="main-header__tutorial"> Watch tutorial </a>
+        </div>
+        <div class="main-header__user-space">
+          <a href="#" class="main-header__notify">
+            <img src="img/notify.svg" alt="notifications" class="main-header__notify-img">
+          </a>
+          <a href="#" class="main-header__login">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <body id="login">
+    <main>
+      <div class="wrapper">
+        <section class="log-in">
+          <form class="log-in__form">
+            <div class="log-in__header">
+              <img src="img/logo_blue.svg" alt="Logo" class="log-in__logo">
+              <p class="log-in__text">Login to continue</p>
+            </div>
+            <div class="log-in__container">
+              <label>
+                <input class="log-in__phone" id="phone" type="tel" name="phone" required />
+              </label>
+              <span class="error"><img src="img/error_sign.svg" alt="error">error</span>
+              <label>
+                <input class="log-in__password" type="password" placeholder="Password" name="password" required autocomplete="current-password" minlength="2" required>
+                <span id="toggle-password">&#128065;</span>
+              </label>
+              <span class="error"><img src="img/error_sign.svg" alt="error">error</span>
+              <a class="log-in__restore" href="#">Forgot password?</a>
+              <button class="button button_login" type="submit" disabled>Log In </button>
+              <a class="button button_fb">
+                <img src="img/fb.svg" alt="Logo"> Log In with Facebook</a>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+  </body>
+  <div class="modal" id="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <button class="close" data-close> &#9587; </button>
+        <p class="modal-header"> Oops! An error occured! </p>
+        <img class="modal-sign" src="img/error_sign.svg" alt="">
+        <p class="modal-body"> Please check you data for mistakes </p>
+      </div>
+    </div>
+  </div>
+  <div id="modal-login">
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button class="close" data-close> &#9587; </button>
+          <p class="modal-header"> Mobile Verification </p>
+          <div class="modal-body">
+            <p class="modal-text"> We sent you an SMS code on number <b>+63 7 657 878 223</b>
+            </p>
+            <form class="modal-form" id="form-sms">
+              <div>
+                <label>
+                  <input class="modal-sms" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" required />
+                </label>
+                <label>
+                  <input class="modal-sms" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" required />
+                </label>
+                <label>
+                  <input class="modal-sms" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" required />
+                </label>
+                <label>
+                  <input class="modal-sms" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" required />
+                </label>
+              </div>
+              <span class="error">
+                <img src="img/error_sign.svg" alt="error"> ergfeefefdvddvdvv </span>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="modal-resend_pass"> Resend code </a>
+            <button form="form-sms" type="submit" class="button button_verify">Verify</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-verified-suc">
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button class="close" data-close> &#9587; </button>
+          <p class="modal-header"> Successfully enabled </p>
+          <div class="modal-body">
+            <img src="img/ver_suc.svg" alt="error">
+            <p class="modal-text">Your phone number has been veriefied successfully!</p>
+          </div>
+          <button type="button" class="button button_done">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-pass-recover">
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button class="close" data-close> &#9587; </button>
+          <p class="modal-header"> Password recovery </p>
+          <div class="modal-body">
+            <form class="modal-form" id="pass-recover">
+              <label>
+                <input class="log-in__phone" id="phone-verify" type="tel" name="phone" required />
+              </label>
+              <span class="error"><img src="img/error_sign.svg" alt="error">error</span>
+            </form>
+          </div>
+          <button form="pass-recover" type="submit" class="button button_pass-recover">Reset password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-new-pass">
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button class="close" data-close> &#9587; </button>
+          <p class="modal-header"> Create new password </p>
+          <div class="modal-body">
+            <form class="modal-form">
+              <label>
+                <input class="log-in__password" type="password" placeholder="Password" name="psw" required>
+                <span id="toggle-password">&#128065;</span>
+              </label>
+              <label>
+                <input class="log-in__password" type="password" placeholder="Confirm password" name="psw" required>
+                <span id="toggle-password">&#128065;</span>
+              </label>
+              <span class="error"><img src="img/error_sign.svg" alt="error">error</span>
+            </form>
+          </div>
+          <button type="submit" class="button button_new-pass">Reset password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-pass-saved">
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button class="close" data-close> &#9587; </button>
+          <div class="modal-header">
+            <img src="img/ver_suc.svg" alt="error">
+          </div>
+          <p class="modal-body">
+          <p class="modal-text">New password saved!</p>
+          </p>
+          <button type="button" class="button button_pass-saved">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="test"></div>
+  <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.18.10/package/dist/xlsx.full.min.js"></script>
+  <script src="./js/js.js"></script>
+</html>
